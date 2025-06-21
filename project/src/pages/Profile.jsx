@@ -21,7 +21,7 @@ const Profile = () => {
   const fetchUserVideos = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/videos/user/my-videos');
+      const response = await axios.get('https://vid-share-backend.onrender.com/api/videos/user/my-videos');
       const userVideos = response.data;
       setVideos(userVideos);
 
