@@ -23,7 +23,7 @@ const VideoPlayerPage = () => {
   const fetchVideo = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/videos/${id}`);
+      const response = await axios.get(`https://vid-share-backend.onrender.com/api/videos/${id}`);
       setVideo(response.data);
       setLikesCount(response.data.likes?.length || 0);
       setLiked(user && response.data.likes?.includes(user.id));
@@ -42,7 +42,7 @@ const VideoPlayerPage = () => {
     }
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/videos/${id}/like`);
+      const response = await axios.post(`https://vid-share-backend.onrender.com/api/videos/${id}/like`);
       setLiked(response.data.liked);
       setLikesCount(response.data.likesCount);
     } catch (error) {
@@ -57,7 +57,7 @@ const VideoPlayerPage = () => {
 
     try {
       setDeleting(true);
-      await axios.delete(`http://localhost:5000/api/videos/${id}`);
+      await axios.delete(`https://vid-share-backend.onrender.com/api/videos/${id}`);
       navigate('/profile');
     } catch (error) {
       console.error('Error deleting video:', error);
