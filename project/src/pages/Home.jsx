@@ -18,7 +18,7 @@ const Home = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:5000/api/videos${searchQuery ? `?search=${searchQuery}` : ''}`
+        `https://vid-share-backend.onrender.com/api/videos${searchQuery ? `?search=${searchQuery}` : ''}`
       );
       setVideos(response.data.videos);
     } catch (error) {
