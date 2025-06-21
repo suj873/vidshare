@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',//'https://vid-share.onrender.com', // Adjust this to your frontend URL
+  origin: 'https://vid-share.onrender.com', // Adjust this to your frontend URL
   credentials: true
 }));
 app.use(express.json({ limit: '50mb' }));
